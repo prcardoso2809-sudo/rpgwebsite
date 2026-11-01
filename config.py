@@ -3,7 +3,6 @@ from db import db
 # Tabela de Usuários do Site (Mestres e Jogadores)
 class UsuarioRpg(db.Model):
     __tablename__ = 'usuarios_rpg'
-    __bind_key__ = 'usuarios_rpg_bind'
     
     id = db.Column(db.Integer, primary_key=True)
     user = db.Column(db.String(100), nullable=False, unique=True)
@@ -13,6 +12,7 @@ class UsuarioRpg(db.Model):
 # Tabela de Fichas dos Personagens
 class Personagem(db.Model):
     __tablename__ = 'personagens'
+    __bind_key__ = 'personagem_rpg_bind'
     
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
@@ -23,6 +23,7 @@ class Personagem(db.Model):
 # Tabela da História / Resumo da One-Shot
 class HistoriaOneShot(db.Model):
     __tablename__ = 'historia_oneshot'
+    __bind_key__ = 'historia_rpg_bind'
     
     id = db.Column(db.Integer, primary_key=True)
     resumo = db.Column(db.Text, nullable=False)
